@@ -17,7 +17,7 @@ export default function Player({ name, symbol }) {
 
   return (
     <li>
-      <span className="payer">
+      <span className="player">
         {playerName}
         <span className="player-symbol">{symbol}</span>
       </span>
