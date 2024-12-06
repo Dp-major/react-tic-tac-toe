@@ -1,26 +1,36 @@
 import { useState } from "react";
 
-export default function Player({ name, symbol }) {
+export default function Player({ initialName, symbol }) {
+  const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEditAndSave() {
-    // To update state using previous state value use arrow function like below
-    // as react will provide the latest previous value of the state
     setIsEditing((editing) => !editing);
   }
 
-  let playerName = <span className="player-name">{name}</span>;
+  function handleInputChange(event) {
+    setPlayerName(event.target.value);
+  }
+
+  let playerNameEle = <span className="player-name">{playerName}</span>;
   let buttonText = "Edit";
 
   if (isEditing) {
-    playerName = <input type="text" required value={name} />;
+    playerNameEle = (
+      <input
+        type="text"
+        required
+        value={playerName}
+        onChange={handleInputChange}
+      />
+    );
     buttonText = "Save";
   }
 
   return (
     <li>
       <span className="player">
-        {playerName}
+        {playerNameEle}
         <span className="player-symbol">{symbol}</span>
       </span>
       <button onClick={handleEditAndSave}>{buttonText}</button>
