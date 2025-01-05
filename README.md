@@ -184,3 +184,6 @@ Conditional disabling ensures buttons respond appropriately to user actions. By 
 
 
 Note: This README.md is a general template. For more detailed explanations and code examples, please refer to the individual components and commits in the repository.
+
+# Important readings from GPT
+[How react reenders components on state and props change](https://chatgpt.com/share/677a3fd9-9f70-800c-abc2-e92e01d5e0a5)
